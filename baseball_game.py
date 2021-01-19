@@ -123,11 +123,11 @@ def is_validated_number(user_input_number):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     
     if is_digit(user_input_number) and is_between_100_and_999(user_input_number) and not is_duplicated_number(user_input_number):
-        return True
+        result= True
     else:
-        return False
+        result= False
     # =================================
-
+    return result
 
 def get_not_duplicated_three_digit_number():
     # '''
@@ -233,9 +233,10 @@ def is_yes(one_more_input):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     
     if one_more_input.lower()=='yes' or one_more_input.lower()=='y':
-        return True
+        result= True
     else:
-        return False
+        result= False
+    return result
 
 
 def is_no(one_more_input):
@@ -266,16 +267,16 @@ def is_no(one_more_input):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
 
     if one_more_input.lower()=='no' or one_more_input.lower()=='n':
-        return True
+        result= True
     else:
-        return False
-
+        result= False
+    return result
 
 def main():
+    print("Play Baseball")
     while True:
-        print("Play Baseball")
         random_number = str(get_not_duplicated_three_digit_number())
-        print("Random Number is : ", random_number)
+        print("Random Number is :  ", random_number)
         while True:
             user_input = input('Input guess number : ')
             if user_input==str(0):
@@ -283,9 +284,9 @@ def main():
                 break
             if user_input==random_number:
                 st_ball=get_strikes_or_ball(user_input,random_number)
-                print('Strikes : ', st_ball[0],' Balls : ',st_ball[1])
+                print('Strikes : ', st_ball[0],' , ','Balls : ',st_ball[1])
                 while True:
-                    yes_or_no=input("You win, one more(Y/N)? ")
+                    yes_or_no=input("You win, one more(Y/N)?")
                     if is_yes(yes_or_no) or is_no(yes_or_no):
                         break
                     else:
