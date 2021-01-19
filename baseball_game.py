@@ -285,7 +285,7 @@ def main():
                 st_ball=get_strikes_or_ball(user_input,random_number)
                 print('Strikes : ', st_ball[0],' Balls : ',st_ball[1])
                 while True:
-                    yes_or_no=input("You win, one more(Y/N)?")
+                    yes_or_no=input("You win, one more(Y/N)? ")
                     if is_yes(yes_or_no) or is_no(yes_or_no):
                         break
                     else:
